@@ -132,12 +132,11 @@ if( ! function_exists( 'wp_dropdown_posts' ) ) {
 		/**
 		 * Filter the HTML output of a list of pages as a drop down.
 		 *
-		 * @since 2.1.0
-		 * @since 4.4.0 `$r` and `$posts` added as arguments.
+		 * @since 1.0.0
 		 *
-		 * @param string $output HTML output for drop down list of pages.
+		 * @param string $output HTML output for drop down list of posts.
 		 * @param array  $r      The parsed arguments array.
-		 * @param array  $posts  List of WP_Post objects returned by `get_pages()`
+		 * @param array  $posts  List of WP_Post objects returned by `get_posts()`
 		 */
 		$html = apply_filters( 'wp_dropdown_posts', $output, $r, $posts );
 
