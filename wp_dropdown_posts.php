@@ -115,10 +115,9 @@ if( ! function_exists( 'wp_dropdown_posts' ) ) {
 
 			foreach( (array) $posts as $post ) {
 
-				$post->ID  = (int) $post->ID;
-				$_selected = selected( $post->ID, $r['selected'], FALSE );
-
 				$value   = ! isset($r['value_field']) || ! isset($post->{$r['value_field']}) ? $post->ID : $post->{$r['value_field']};
+				$_selected = selected( $value, $r['selected'], FALSE );
+
 				$display = ! empty($post->$show) ? $post->$show : sprintf( __( '#%d (no title)' ), $post->ID );
 
 				if( $r['show_callback'] ) $display = call_user_func( $r['show_callback'], $display, $post->ID );
